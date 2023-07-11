@@ -24,13 +24,11 @@ export const withValidation = (Component: FC, id: UUID, number: number) => {
     const [setCardPair] = useSetCardPair()
 
     const validation = () => {
-      console.log({ activeCards })
       const areClickOnTheSameCard = activeCards.some(card => card.id === id)
       if (areClickOnTheSameCard) return
 
       const haveSameCard = (activeCardsWithoutPair === 1) && (findSameCard(number) === number)
       if (haveSameCard) {
-        console.log('has encontrado un par!!')
         setActiveCard(true)
         setActiveCardsWithoutPair(0)
         setActiveCards(prev => ([
@@ -47,6 +45,17 @@ export const withValidation = (Component: FC, id: UUID, number: number) => {
 
         flipAllCards()
         return
+      }
+
+      if (activeCardsWithoutPair >= 2) {
+        const cardsWithPair = activeCards.filter(card => {
+          return card.isActive && card.hasPair
+        })
+
+        flipAllCards()
+
+        setActiveCards(cardsWithPair)
+        setActiveCardsWithoutPair(0)
       }
 
       setActiveCard(true)

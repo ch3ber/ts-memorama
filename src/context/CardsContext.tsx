@@ -4,8 +4,8 @@ import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "re
 export interface CardsContextType {
   activeCards: Card[]
   setActiveCards: Dispatch<SetStateAction<Card[]>>
-  activeCardsWithoutPair: number
-  setActiveCardsWithoutPair: Dispatch<SetStateAction<number>>
+  activeCardsWithoutPair: Card[]
+  setActiveCardsWithoutPair: Dispatch<SetStateAction<Card[]>>
 }
 
 export const CardsContext = createContext<undefined | CardsContextType>(undefined)
@@ -20,7 +20,7 @@ export interface Card {
 
 export const CardsContextProvider = ({ children }: { children: ReactNode }) => {
   const [activeCards, setActiveCards] = useState<Card[]>([])
-  const [activeCardsWithoutPair, setActiveCardsWithoutPair] = useState(0)
+  const [activeCardsWithoutPair, setActiveCardsWithoutPair] = useState<Card[]>([])
 
   return (
     <CardsContext.Provider value={{

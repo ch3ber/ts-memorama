@@ -28,7 +28,6 @@ export const withValidation = (Component: FC, id: UUID, number: number) => {
       const areClickOnTheSameCard =
         activeCards.some(card => card.id === id) || activeCardsWithoutPair.some(card => card.id === id)
 
-      console.log({ areClickOnTheSameCard })
       if (areClickOnTheSameCard) return
 
       const haveSameCard = (activeCardsWithoutPair.length === 1) && (findSameCard(number) === number)

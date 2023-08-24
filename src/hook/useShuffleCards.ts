@@ -1,6 +1,6 @@
 import { config } from "@config"
 
-export const useshuffleCards = () => {
+export const useShuffleCards = () => {
   let shuffledCards: number[] = []
 
   const CARD_DUPLICATOR = 2

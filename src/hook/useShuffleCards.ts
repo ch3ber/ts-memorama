@@ -1,7 +1,7 @@
-import { config } from "@config"
+import { config } from '@config'
 
 export const useShuffleCards = () => {
-  let shuffledCards: number[] = []
+  const shuffledCards: number[] = []
 
   const CARD_DUPLICATOR = 2
   const numberOfCards = config.numberOfCards / CARD_DUPLICATOR

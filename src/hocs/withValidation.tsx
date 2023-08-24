@@ -1,13 +1,13 @@
 'use client'
-import { FC, useContext, useState } from "react"
-import { UUID } from "crypto"
+import { type FC, useContext, useState } from 'react'
+import { type UUID } from 'crypto'
 
-import { Card, CardsContext, CardsContextType } from "@context"
+import { type Card, CardsContext, type CardsContextType } from '@context'
 
-import { useFindSameCard } from "@/hook/useFindSameCard"
-import { useFlipAllCards } from "@/hook/useFlipAllCards"
-import { useSetCardPair } from "@/hook/useSetCardPair"
-import { config } from "@config"
+import { useFindSameCard } from '@/hook/useFindSameCard'
+import { useFlipAllCards } from '@/hook/useFlipAllCards'
+import { useSetCardPair } from '@/hook/useSetCardPair'
+import { config } from '@config'
 
 export const withValidation = (Component: FC, id: UUID, number: number) => {
   // eslint-disable-next-line react/display-name
@@ -38,7 +38,7 @@ export const withValidation = (Component: FC, id: UUID, number: number) => {
           id,
           number,
           isActive: true,
-          setActive: (value: boolean) => setActiveCard(value),
+          setActive: (value: boolean) => { setActiveCard(value) },
           hasPair: true
         }
 
@@ -67,7 +67,7 @@ export const withValidation = (Component: FC, id: UUID, number: number) => {
         id,
         number,
         isActive: true,
-        setActive: (value: boolean) => setActiveCard(value),
+        setActive: (value: boolean) => { setActiveCard(value) },
         hasPair: false
       }
       setActiveCard(true)

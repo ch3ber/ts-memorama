@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "eslint --fix ./src/*"
   },
   "dependencies": {
     "@types/node": "20.3.1",
@@ -23,13 +24,13 @@
   },
   "devDependencies": {
     "@types/uuid": "9.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "6.1.0",
     "eslint": "8.43.0",
-    "eslint-config-standard-with-typescript": "^38.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.33.2",
+    "eslint-config-standard-with-typescript": "38.0.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-n": "15.0.0 || 16.0.0 ",
+    "eslint-plugin-promise": "6.0.0",
+    "eslint-plugin-react": "7.33.2",
     "typescript": "5.1.3"
   }
 }

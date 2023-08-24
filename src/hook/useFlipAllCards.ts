@@ -1,5 +1,5 @@
-import { CardsContext, CardsContextType } from "@context"
-import { useContext } from "react"
+import { CardsContext, type CardsContextType } from '@context'
+import { useContext } from 'react'
 
 export const useFlipAllCards = () => {
   const { activeCardsWithoutPair } = useContext(CardsContext) as CardsContextType

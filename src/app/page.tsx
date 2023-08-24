@@ -1,9 +1,9 @@
-import CardGrid from "@/components/CardGrid";
-import Footer from "@/components/Footer";
-import { CardsContextProvider } from "@context";
-import { useShuffleCards } from "@/hook/useShuffleCards";
+import CardGrid from '@/components/CardGrid'
+import Footer from '@/components/Footer'
+import { CardsContextProvider } from '@context'
+import { useShuffleCards } from '@/hook/useShuffleCards'
 
-export default function Home() {
+export default function Home () {
   const orderOfCards = useShuffleCards()
 
   return (

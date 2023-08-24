@@ -1,5 +1,5 @@
 'use client'
-import { Dispatch, ReactNode, SetStateAction, createContext, useState } from "react";
+import { type Dispatch, type ReactNode, type SetStateAction, createContext, useState } from 'react'
 
 export interface CardsContextType {
   activeCards: Card[]

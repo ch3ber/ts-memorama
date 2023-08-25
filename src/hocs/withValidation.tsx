@@ -9,7 +9,7 @@ import { useSetCardPair } from '@/hook/useSetCardPair'
 import { config } from '@config'
 import { type CardProps } from '@/components/Card'
 
-export const withValidation = (Component: ({ number, validation, isActiveCard }: CardProps) => JSX.Element, id: string, number: number) => {
+export const withValidation = (Component: ({ number, onFlipCard, isActiveCard }: CardProps) => JSX.Element, id: string, number: number) => {
   // eslint-disable-next-line react/display-name
   return function (props: any) {
     const {
@@ -24,7 +24,7 @@ export const withValidation = (Component: ({ number, validation, isActiveCard }:
     const [flipAllCards] = useFlipAllCards()
     const [setCardPair] = useSetCardPair()
 
-    const validation = () => {
+    const onFlipCard = () => {
       const areClickOnTheSameCard =
         activeCards.some(card => card.id === id) || activeCardsWithoutPair.some(card => card.id === id)
 
@@ -74,6 +74,6 @@ export const withValidation = (Component: ({ number, validation, isActiveCard }:
       setActiveCardsWithoutPair((prev: Card[]) => [...prev, activeCardWithoutPairInfo])
     }
 
-    return <Component {...props} validation={validation} isActiveCard={isActiveCard} />
+    return <Component {...props} onFlipCard={onFlipCard} isActiveCard={isActiveCard} />
   }
 }

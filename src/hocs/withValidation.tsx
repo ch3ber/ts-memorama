@@ -1,6 +1,5 @@
 'use client'
-import { type FC, useContext, useState } from 'react'
-import { type UUID } from 'crypto'
+import { useContext, useState, type JSX } from 'react'
 
 import { type Card, CardsContext, type CardsContextType } from '@context'
 
@@ -8,8 +7,9 @@ import { useFindSameCard } from '@/hook/useFindSameCard'
 import { useFlipAllCards } from '@/hook/useFlipAllCards'
 import { useSetCardPair } from '@/hook/useSetCardPair'
 import { config } from '@config'
+import { type CardProps } from '@/components/Card'
 
-export const withValidation = (Component: FC, id: UUID, number: number) => {
+export const withValidation = (Component: ({ number, validation, isActiveCard }: CardProps) => JSX.Element, id: string, number: number) => {
   // eslint-disable-next-line react/display-name
   return function (props: any) {
     const {

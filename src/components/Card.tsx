@@ -1,6 +1,6 @@
 'use client'
 
-interface CardProps {
+export interface CardProps {
   number: number
   validation: () => void
   isActiveCard: boolean

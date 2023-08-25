@@ -12,7 +12,6 @@ export default function CardGrid ({ order }: CardGridProps) {
     <section className="max-w-6xl mx-auto items-center justify-center grid grid-cols-2 lg:grid-cols-4 gap-14 mt-10">
       {order.map((numberCard) => {
         const cardId = createCardId()
-        // @ts-expect-error
         const CardWithValidation = withValidation(Card, cardId, numberCard)
         return <CardWithValidation key={cardId} number={numberCard} id={cardId} />
       })}
